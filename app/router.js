@@ -8,4 +8,6 @@ module.exports = app => {
   router.get('/', controller.home.index);
 
   router.get('/wx', controller.home.wxIndex);
+
+  router.post('/wx', controller.home.wxMessage);
 };

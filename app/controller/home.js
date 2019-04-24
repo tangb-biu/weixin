@@ -29,6 +29,13 @@ class HomeController extends Controller {
       ctx.body = 'hello world';
     }
   }
+
+  async wxMessage() {
+    const { ctx } = this;
+    const reqbd = ctx.request.body;
+    console.log(reqbd);
+    ctx.body = 'hello';
+  }
 }
 
 module.exports = HomeController;
