@@ -2,6 +2,7 @@
 
 const sha1 = require('sha1');
 const Controller = require('egg').Controller;
+const wechat = require('co-wechat');
 
 class HomeController extends Controller {
   async index() {
@@ -29,13 +30,18 @@ class HomeController extends Controller {
       ctx.body = 'hello world';
     }
   }
-
-  async wxMessage() {
-    const { ctx } = this;
-    const reqbd = ctx.request.body;
-    console.log(reqbd);
-    ctx.body = 'hello';
-  }
 }
 
+const config = {
+  appid: 'wxe1e24497c6cc5e6d',
+  token: 'abc123',
+  encodingAESKey: 'd6idGlf9BgqeHMovcnklHByxDQlaroIEzNe7fbsOMqo',
+};
+HomeController.prototype.wechat = wechat(config).middleware(async (message, ctx) => {
+  console.log(message);
+  return {
+    content: 'text object',
+    type: 'text',
+  };
+});
 module.exports = HomeController;
