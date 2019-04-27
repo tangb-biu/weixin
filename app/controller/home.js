@@ -38,9 +38,14 @@ const config = {
   encodingAESKey: 'd6idGlf9BgqeHMovcnklHByxDQlaroIEzNe7fbsOMqo',
 };
 HomeController.prototype.wechat = wechat(config).middleware(async (message, ctx) => {
-  console.log(message);
+  if (message.MsgType === 'text') {
+    return {
+      content: '月老让我告诉你一个秘密，唐斌喜欢😘兰杨😘，怎么样都喜欢。',
+      type: 'text',
+    };
+  }
   return {
-    content: 'text object',
+    content: '我还没长大呢，现在只认识汉字哦。',
     type: 'text',
   };
 });
