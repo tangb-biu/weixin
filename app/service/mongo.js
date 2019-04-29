@@ -22,6 +22,16 @@ class MongoService extends Service {
       request(url).pipe(writestream);
     });
   }
+
+  async getFile(filename, writeStream) {
+    await mongoose.createConnection(this.app.config.mongo.uri);
+    const conn = mongoose.connection;
+    const gfs = Grid(conn.db, mongoose.mongo);
+    const readstream = gfs.createReadStream({
+      filename,
+    });
+    readstream.pipe(writeStream);
+  }
 }
 
 module.exports = MongoService;

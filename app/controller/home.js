@@ -35,6 +35,11 @@ class HomeController extends Controller {
     const pics = await ctx.service.picture.getAllPicture();
     await ctx.render('picture.htm', { pics });
   }
+
+  async weixinFile() {
+    const filename = this.ctx.params.filename;
+    this.ctx.service.mongo.getFile(filename, this.ctx.response.res.write);
+  }
 }
 
 const config = {

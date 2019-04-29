@@ -17,6 +17,7 @@ class PictureService extends Service {
       messageType: message.MsgType,
       mediaId: message.MediaId,
       forUser: message.FromUserName,
+      messageId: message.MsgId,
     });
 
     return await pic.save();

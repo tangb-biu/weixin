@@ -8,4 +8,5 @@ module.exports = new Schema({
   mediaId: String,
   createTime: { type: Date, default: Date.now },
   forUser: String,
+  messageId: Number,
 });
