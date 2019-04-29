@@ -7,8 +7,8 @@ const Service = require('egg').Service;
 
 class MongoService extends Service {
   async getConnection() {
-    const conn = mongoose.createConnection(this.app.config.mongo.uri);
-    return conn;
+    await mongoose.createConnection(this.app.config.mongo.uri);
+    return mongoose.connection;
   }
   async saveFile(filename, url, options) {
     const conn = this.getConnection();
