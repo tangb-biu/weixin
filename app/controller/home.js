@@ -30,7 +30,7 @@ class HomeController extends Controller {
       ctx.body = 'hello world';
     }
   }
-  async weixinPicture() {
+  weixinPicture() {
     const { ctx } = this;
     const pics = ctx.service.picture.getAllPicture();
     pics.then((err, data) => {
