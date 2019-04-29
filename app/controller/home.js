@@ -33,8 +33,14 @@ class HomeController extends Controller {
   async weixinPicture() {
     const { ctx } = this;
     const pics = ctx.service.picture.getAllPicture();
-    console.log(pics);
-    await ctx.render('picture.htm', {});
+    pics.then((err, data) => {
+      if (err) {
+        ctx.render('picture.htm', []);
+        return;
+      }
+      console.log(data);
+      ctx.render('picture.htm', []);
+    });
   }
 }
 
