@@ -30,17 +30,10 @@ class HomeController extends Controller {
       ctx.body = 'hello world';
     }
   }
-  weixinPicture() {
+  async weixinPicture() {
     const { ctx } = this;
-    const pics = ctx.service.picture.getAllPicture();
-    pics.then((err, data) => {
-      if (err) {
-        ctx.render('picture.htm', []);
-        return;
-      }
-      console.log(data);
-      ctx.render('picture.htm', []);
-    });
+    const pics = await ctx.service.picture.getAllPicture();
+    await ctx.render('picture.htm', { pics });
   }
 }
 
@@ -63,7 +56,7 @@ HomeController.prototype.wechat = wechat(config).middleware(async (message, ctx)
     ctx.service.picture.savePicture(message);
   }
   return {
-    content: '我还没长大呢，现在只认识汉字哦。',
+    content: 'http://47.96.68.132/picture',
     type: 'text',
   };
 });
