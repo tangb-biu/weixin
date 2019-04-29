@@ -30,6 +30,10 @@ class HomeController extends Controller {
       ctx.body = 'hello world';
     }
   }
+  async weixinPicture() {
+    const { ctx } = this;
+    await ctx.render('picture.htm', {});
+  }
 }
 
 const config = {
@@ -43,6 +47,11 @@ HomeController.prototype.wechat = wechat(config).middleware(async (message, ctx)
       content: '月老让我告诉你一个秘密，唐斌喜欢😘兰杨😘，怎么样都喜欢。',
       type: 'text',
     };
+  }
+
+  if (message.MsgType === 'image') {
+    const MsgId = message.MsgId;
+    this.ctx.service.mongo.saveImage(MsgId, message);
   }
   return {
     content: '我还没长大呢，现在只认识汉字哦。',

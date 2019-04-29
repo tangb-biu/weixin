@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>女王大人</title>
+<meta http-equiv="expires" content="0">
+<meta content="telephone=no,email=no" name="format-deteection">
+<link rel="shortcut icon" href="/static/favicon"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" />
+<link rel="stylesheet" href="/static/css/swiper.min.css">
+<style>
+html, body {
+    position: relative;
+    height: 100%;
+}
+body {
+    background: #fff;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    margin: 0;
+    padding: 0;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+}
+</style>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/1)"></div>
+        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/2)"></div>
+        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/3)"></div>
+        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/4)"></div>
+        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/5)"></div>
+    </div>
+<!-- <div class="swiper-pagination"></div> -->
+</div>
+<script src="/static/js/swiper.min.js"></script>
+<script>
+var swiper = new Swiper('.swiper-container', {
+    effect: 'cube',
+    grabCursor: true,
+    cubeEffect: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+    },
+});
+</script>
+</body>
+</html>

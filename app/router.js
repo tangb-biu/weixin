@@ -8,4 +8,6 @@ module.exports = app => {
   router.get('/', controller.home.index);
 
   router.all('/wx', controller.home.wechat);
+
+  router.get('/picture', controller.home.weixinPicture);
 };
