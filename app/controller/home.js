@@ -32,6 +32,8 @@ class HomeController extends Controller {
   }
   async weixinPicture() {
     const { ctx } = this;
+    const pics = ctx.service.picture.getAllPicture();
+    console.log(pics);
     await ctx.render('picture.htm', {});
   }
 }
@@ -52,6 +54,7 @@ HomeController.prototype.wechat = wechat(config).middleware(async (message, ctx)
   if (message.MsgType === 'image') {
     const MsgId = message.MsgId;
     ctx.service.picture.saveImage(MsgId, message);
+    ctx.service.picture.savePicture(message);
   }
   return {
     content: '我还没长大呢，现在只认识汉字哦。',

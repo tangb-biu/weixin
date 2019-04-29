@@ -11,9 +11,10 @@ class MongoService extends Service {
     return mongoose.connection;
   }
   async saveFile(filename, url, options) {
-    const conn = this.getConnection();
+    mongoose.connect(this.app.config.mongo.uri);
+    const conn = mongoose.connection;
     conn.once('open', () => {
-      const gfs = Grid(conn.db);
+      const gfs = Grid(conn.db, mongoose.mongo);
       const writestream = gfs.createWriteStream({
         filename,
         ...options,
