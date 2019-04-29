@@ -38,7 +38,7 @@ class HomeController extends Controller {
 
   async weixinFile() {
     const filename = this.ctx.params.filename;
-    this.ctx.service.mongo.getFile(filename, this.ctx.response.res.write);
+    this.ctx.service.mongo.getFile(filename, this.ctx.res);
   }
 }
 
@@ -56,8 +56,8 @@ HomeController.prototype.wechat = wechat(config).middleware(async (message, ctx)
   }
 
   if (message.MsgType === 'image') {
-    const MsgId = message.MsgId;
-    ctx.service.picture.saveImage(MsgId, message);
+    // const MsgId = message.MsgId;
+    // ctx.service.picture.saveImage(MsgId, message);
     ctx.service.picture.savePicture(message);
   }
   return {
