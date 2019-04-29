@@ -2,7 +2,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 module.exports = new Schema({
-  _id: Schema.Types.ObjectId,
   name: String,
   url: String,
   messageType: String,
