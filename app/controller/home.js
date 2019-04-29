@@ -51,7 +51,7 @@ HomeController.prototype.wechat = wechat(config).middleware(async (message, ctx)
 
   if (message.MsgType === 'image') {
     const MsgId = message.MsgId;
-    ctx.service.mongo.saveImage(MsgId, message);
+    ctx.service.picture.saveImage(MsgId, message);
   }
   return {
     content: '我还没长大呢，现在只认识汉字哦。',
