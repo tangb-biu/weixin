@@ -67,7 +67,7 @@ load.on('complete',hand);
 //图片加载完后执行的方法
 function hand(){
     document.getElementsByClassName("loading")[0].style.display = 'none';
-    document.getElementsByClassName("swiper-wrapper")[0].style.display = 'block';
+    document.getElementsByClassName("swiper-wrapper")[0].style.display = 'flex';
     var swiper = new Swiper('.swiper-container', {
         effect: 'cube',
         loop: true,
