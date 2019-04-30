@@ -40,6 +40,10 @@ module.exports = appInfo => {
     uri: 'mongodb://tangbin:tangbin@47.96.68.132:27017/weixin',
   };
 
+  config.configure = {
+    picPath: '/home/ftpuser/www/images',
+  };
+
   config.static = {
     // 静态化访问前缀,如：`http://127.0.0.1:7001/static/images/logo.png`
     prefix: '/static',
