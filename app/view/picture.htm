@@ -37,7 +37,10 @@ body {
 <div class="swiper-container">
     <div class="swiper-wrapper">
         {% for item in pics %}
-        <div class="swiper-slide" style="background-image:url('http://47.96.68.132:8081/images/{{item.messageId}}.jpg')"></div>
+        <div class="swiper-slide">
+            <img data-src="http://47.96.68.132:8081/images/{{item.messageId}}.jpg" class="swiper-lazy">
+            <div class="swiper-lazy-preloader"></div>
+        </div>
         {% endfor %}
     </div>
 <!-- <div class="swiper-pagination"></div> -->
@@ -46,6 +49,10 @@ body {
 <script>
 var swiper = new Swiper('.swiper-container', {
     effect: 'cube',
+    loop: true,
+    autoplay: {
+        delay: 2000,
+    },
     grabCursor: true,
     cubeEffect: {
         shadow: true,
