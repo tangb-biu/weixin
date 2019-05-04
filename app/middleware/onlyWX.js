@@ -7,8 +7,8 @@ module.exports = () => {
     const header = ctx.request.header;
     const ua = header['user-agent'].toLowerCase();
     const isWX = /.*micromessenger.*/.test(ua);
-    if (!isWX) {
-      await ctx.render('error.htm', {});
-    }
+    // if (!isWX) {
+    //   await ctx.render('error.htm', {});
+    // }
   };
 };
