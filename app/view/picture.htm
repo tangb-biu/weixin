@@ -36,7 +36,6 @@ body {
     height: 100%;
     width: 100%;
     background-position: center;
-    background-size: cover;
     background-image: url('/static/timg.gif');
 }
 </style>
@@ -56,7 +55,7 @@ body {
 <script>
 
 var imgsrc=[
-    {% for item in pics %}
+    {% for item in pics。slice(0,3) %}
     {id:'{{item.messageId}}',src:'http://47.96.68.132:8081/images/{{item.messageId}}.jpg'},
     {% endfor %}
 ];
