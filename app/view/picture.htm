@@ -55,7 +55,7 @@ body {
 <script>
 
 var imgsrc=[
-    {% for item in pics。slice(0,3) %}
+    {% for item in pics.slice(0,3) %}
     {id:'{{item.messageId}}',src:'http://47.96.68.132:8081/images/{{item.messageId}}.jpg'},
     {% endfor %}
 ];
