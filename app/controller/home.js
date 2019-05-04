@@ -52,7 +52,7 @@ const config = {
 HomeController.prototype.wechat = wechat(config).middleware(async (message, ctx) => {
   if (message.MsgType === 'text') {
     return {
-      content: '月老让我告诉你一个秘密，唐斌喜欢😘兰杨😘，怎么样都喜欢。',
+      content: '为了吸引她我再做一些改变。',
       type: 'text',
     };
   }
