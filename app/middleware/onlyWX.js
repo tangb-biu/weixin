@@ -8,7 +8,7 @@ module.exports = () => {
     const ua = header['user-agent'];
     const isWX = /.*micromessenger.*/.test(ua);
     if (!isWX) {
-      ctx.redirect('https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe1e24497c6cc5e6d&redirect_uri=http://47.96.68.132/picture');
+      await ctx.render('error.htm', {});
     }
   };
 };
