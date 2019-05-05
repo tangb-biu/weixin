@@ -52,7 +52,7 @@ const config = {
 HomeController.prototype.wechat = wechat(config).middleware(async (message, ctx) => {
   if (message.MsgType === 'text') {
     return {
-      content: '为了吸引她我正在做一些改变。',
+      content: '参与分享你会获得更多，发一张图片试试。',
       type: 'text',
     };
   }
