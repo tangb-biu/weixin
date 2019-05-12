@@ -11,5 +11,7 @@ module.exports = app => {
 
   router.get('/picture', controller.home.weixinPicture);
 
+  router.get('/api/picture', controller.weixinPictureApis);
+
   router.get('/pic/:filename', controller.home.weixinFile);
 };
