@@ -71,7 +71,7 @@ HomeController.prototype.wechat = wechat(config).middleware(async (message, ctx)
     ctx.service.picture.savePicture(message);
   }
   return {
-    content: '点击 http://47.96.68.132/picture 查看相册。',
+    content: '点击 https://mgtbin.site/wx/picture 查看相册。',
     type: 'text',
   };
 });
