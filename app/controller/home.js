@@ -40,7 +40,7 @@ class HomeController extends Controller {
 
   async weixinPictureApis() {
     const { ctx } = this;
-    const pics = await ctx.servive.picture.getAllPicture();
+    const pics = await ctx.service.picture.getAllPicture();
     ctx.body = pics;
   }
 
