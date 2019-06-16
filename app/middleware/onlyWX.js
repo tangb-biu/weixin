@@ -5,6 +5,7 @@ module.exports = () => {
   return async function onlyWX(ctx, next) {
     await next();
     const header = ctx.request.header;
+    console.log(header);
     const ua = header['user-agent'].toLowerCase();
     const isWX = /.*micromessenger.*/.test(ua);
     // if (!isWX) {

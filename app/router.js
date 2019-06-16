@@ -9,9 +9,9 @@ module.exports = app => {
 
   router.all('/wx', controller.home.wechat);
 
-  router.get('/wx/picture', controller.home.weixinPicture);
+  router.get('/lx/picture', controller.home.weixinPicture);
 
-  router.get('/wx/api/picture', controller.home.weixinPictureApis);
+  router.get('/lx/api/picture', controller.home.weixinPictureApis);
 
-  router.get('/wx/pic/:filename', controller.home.weixinFile);
+  router.get('/lx/pic/:filename', controller.home.weixinFile);
 };
