@@ -3,6 +3,7 @@ const Service = require('egg').Service;
 const mongoose = require('mongoose');
 const picSchema = require('../model/pictrueSchema');
 const PIC = mongoose.model('Picture', picSchema);
+const fs = require('fs');
 class PictureService extends Service {
   async saveImage(filename, message) {
     const picUrl = message.PicUrl;
@@ -24,8 +25,11 @@ class PictureService extends Service {
   }
 
   async getAllPicture() {
-    await mongoose.connect(this.app.config.mongo.uri);
-    return await PIC.find({ messageType: 'image' });
+
+    const files = fs.readdirSync('/home/ftpuser/www/images/');
+    return files;
+    //await mongoose.connect(this.app.config.mongo.uri);
+    //return await PIC.find({ messageType: 'image' });
   }
 }
 

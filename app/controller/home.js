@@ -66,7 +66,7 @@ HomeController.prototype.wechat = wechat(config).middleware(async (message, ctx)
   if (message.MsgType === 'image') {
     // const MsgId = message.MsgId;
     // ctx.service.picture.saveImage(MsgId, message);
-    const writeStream = fs.createWriteStream('/home/ftpuser/www/images/' + message.MsgId + '.jpg');
+    const writeStream = fs.createWriteStream('/home/ftpuser/www/images/' + message.MediaId + '.jpg');
     await request(message.PicUrl).pipe(writeStream);
     ctx.service.picture.savePicture(message);
   }
