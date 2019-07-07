@@ -38,14 +38,13 @@ Example.doublePendulum = function() {
     // create engine
     var engine = Engine.create(),
         world = engine.world;
-
     // create renderer
     var render = Render.create({
         element: document.body,
         engine: engine,
         options: {
-            width: 800,
-            height: 600,
+            width: $(html).width()-2,
+            height: $(html).height()-2,
             wireframes: false,
             background: '#ffffff'
         }
